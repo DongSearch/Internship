@@ -43,7 +43,8 @@ Enhance planning defense in SafeBench benchmarking by leveraging FlowMatching an
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/19076e98-29f2-469a-9443-73c1b8906e47" width="100%"></video> | <video src="https://github.com/user-attachments/assets/bcf5fc9c-2d08-4d1d-8e5d-2fc4a3d0576c" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_2" src="https://github.com/user-attachments/assets/653cdc99-6491-4af3-a8d2-22cc0b97a6fb" />
+<img width="1200" height="600" alt="report_epbatch_2" src="https://github.com/user-attachments/assets/7093cd74-6914-4f64-8dcf-0893ad832a84" />
+
 
 #### 📈 Result Analysis
 When a pedestrian crosses the road, the SDF score drops below 0.5, triggering an immediate stop. Once the pedestrian has cleared the path, the vehicle resumes its movement.
@@ -53,7 +54,8 @@ When a pedestrian crosses the road, the SDF score drops below 0.5, triggering an
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/a3ff2497-3b26-468d-a215-640af410d28b" width="100%"></video> | <video src="https://github.com/user-attachments/assets/0e7d0b9c-6ffd-4196-8351-37ee79f58ed6" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_6" src="https://github.com/user-attachments/assets/a637ca0c-7aa4-423b-8a44-ddf507e7b960" />
+<img width="1200" height="600" alt="report_epbatch_6" src="https://github.com/user-attachments/assets/392641e9-deb2-45c6-9760-764f2599cc49" />
+
 
 
 #### 📈 Result Analysis
@@ -64,7 +66,8 @@ While turning is unsmooth, the FM score ensures functional deceleration. However
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/fed797f1-bce8-4a82-9c2a-adbcf716c629" width="100%"></video> | <video src="https://github.com/user-attachments/assets/ab0626d7-6a1d-4f5a-a0f0-56a01471c246" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_10" src="https://github.com/user-attachments/assets/5b345f3e-3a4d-4755-9d1e-4695687bb3f5" />
+<img width="1200" height="600" alt="report_epbatch_10" src="https://github.com/user-attachments/assets/92e9b53a-9230-4081-a637-06281a90a132" />
+
 
 
 
@@ -76,7 +79,8 @@ The FM score is maintained under normal conditions, but an SDF score below 0.5 s
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/6ebd8224-b7e2-47a6-b9c6-580b2145368a" width="100%"></video> | <video src="https://github.com/user-attachments/assets/0656e968-4496-4f59-8645-44c7023402ab" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_14" src="https://github.com/user-attachments/assets/0d1e2cd0-ee60-430e-a896-e32684fe35d8" />
+<img width="1200" height="600" alt="report_epbatch_14" src="https://github.com/user-attachments/assets/71fd9584-507c-475f-b53f-c167e1468468" />
+
 
 #### 📈 Result Analysis
 The FM score is maintained under normal conditions, but an SDF score below 0.5 signals danger and initiates braking.
@@ -86,8 +90,7 @@ The FM score is maintained under normal conditions, but an SDF score below 0.5 s
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/b74c443e-ac8c-4d84-95ac-3623e9c8c53c" width="100%"></video> | <video src="https://github.com/user-attachments/assets/fb19ce05-1ab5-4f82-9c10-8c0fe7fda07d" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_18" src="https://github.com/user-attachments/assets/3c9c8312-310b-4c7f-8fdd-89995ae3304c" />
-
+<img width="1200" height="600" alt="report_epbatch_18" src="https://github.com/user-attachments/assets/021438ba-0a46-487b-97ac-2e7064024cf7" />
 
 #### 📈 Result Analysis
 Due to the state data being limited to frontal input, SDF fluctuations (below 0.5) are only triggered when a vehicle from the left merges into the front trajectory of the ego car
@@ -97,7 +100,8 @@ Due to the state data being limited to frontal input, SDF fluctuations (below 0.
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/4ced841a-8a12-486d-9d85-d121c49e66fb" width="100%"></video> | <video src="https://github.com/user-attachments/assets/29fba73f-d8d0-4911-a89f-745247f992a8" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_22" src="https://github.com/user-attachments/assets/24ce2f24-9c03-4e3c-9271-a7f14a5f1985" />
+<img width="1200" height="600" alt="report_epbatch_22" src="https://github.com/user-attachments/assets/c39834ba-57c7-491a-95e6-ec12fdb25810" />
+
 
 #### 📈 Result Analysis
 SDF-based braking is restricted by the frontal-only data. Fortunately, the FM score initiates a slowdown during left turns, providing a safety buffer even when the SDF score remains unresponsive
@@ -107,7 +111,8 @@ SDF-based braking is restricted by the frontal-only data. Fortunately, the FM sc
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/1a25a961-2422-43e6-bbd6-23d1ac102088" width="100%"></video> | <video src="https://github.com/user-attachments/assets/c3a21867-8eed-4511-b4a1-c540de59b13e" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_26" src="https://github.com/user-attachments/assets/db2069cf-1750-4efa-9be7-e167a450a90d" />
+<img width="1200" height="600" alt="report_epbatch_26" src="https://github.com/user-attachments/assets/ffa99fa8-863d-44f3-a7c5-0caf7a46753e" />
+
 
 #### 📈 Result Analysis
 This scenario provides a clear example for evaluating both SDF and FM scores. As shown in the logs, the ego car first detects the obstacle and initiates emergency braking. Once the path is clear, it successfully executes a right turn.
@@ -117,7 +122,8 @@ This scenario provides a clear example for evaluating both SDF and FM scores. As
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/7eaf11e6-92c4-48a4-8cf2-b4904ff4bb41" width="100%"></video> | <video src="https://github.com/user-attachments/assets/f0ff0f26-9a5c-456f-9674-0e326623881f" width="100%"></video> |
 
-<img width="1200" height="600" alt="report_epbatch_30" src="https://github.com/user-attachments/assets/51de3576-29ed-4487-913a-458423c621d4" />
+<img width="1200" height="600" alt="report_epbatch_30" src="https://github.com/user-attachments/assets/3bb3fb32-6425-47ff-9155-8ef01a40db8d" />
+
 
 #### 📈 Result Analysis
 Due to the state data being limited to frontal input, SDF fluctuations (below 0.5) are only triggered when a vehicle from the left merges into the front trajectory of the ego car
