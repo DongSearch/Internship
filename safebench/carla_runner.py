@@ -264,7 +264,9 @@ class CarlaRunner:
 
                 # apply action to env and get obs
                 obs, rewards, _, infos = self.env.step(ego_actions=ego_actions, scenario_actions=scenario_actions)
-
+                if hasattr(self.agent_policy, 'save_eval_report'):
+                    report_id = f"batch_{num_finished_scenario}"
+                    self.agent_policy.save_eval_report(report_id)
                 # save video
                 if self.save_video:
                     if self.scenario_category == 'planning':
