@@ -20,6 +20,8 @@ Enhance planning defense in SafeBench benchmarking by leveraging FlowMatching an
 - **`safebench/gym_carla/envs/carla_env.py`**  
   - Added human detection (previously only vehicles were detected)  
   - Edited reward function
+- **`safebench/agent/model_ckpt/sac_fm`**  
+  - add trained model
 
 ## 📅 Key milestone
 - **Sep 30:** Established CARLA and SafeBench environments on a remote server.
