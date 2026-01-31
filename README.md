@@ -4,7 +4,7 @@ Enhance planning defense in SafeBench benchmarking by leveraging FlowMatching an
 ## 🛠 Algorithms Used:
 - **RL (Soft Actor-Critic)**: Learns normal driving behavior.
 - **Flow Matching**: Focuses on vehicle trajectory, steering, speed, and lane-out information. During unexpected turns (left/right), it recognizes OOD scenarios and reduces vehicle speed to handle them safely.
-- **SDF (Signed Distance Function)**: Learns collision-related responses, detecting front objects and sudden appearances regardless of normal driving patterns (side objects ignored). range is between 0 to 1. 0 is dangerous, 1 is safe.
+- **SDF (Signed Distance Function)**: Learns collision-related responses, detecting front objects and sudden appearances regardless of normal driving patterns (side objects ignored). range is between 0 to 1. 0 is dangerous, 1 is safe.(use from basic concept of SDF)
 - **Training Data**: Scenario 1 with random sampling (straight driving with sudden pedestrian appearances).
 - **Proaction**: Incorporates soft/hard braking based on scores.
 - **Workflow**: After RL learns normal driving, Flow Matching and SDF networks are trained. Flow Matching emphasizes trajectory control, while SDF handles sudden collision threats, improving planning defense.
@@ -38,7 +38,7 @@ Enhance planning defense in SafeBench benchmarking by leveraging FlowMatching an
 - **Dec 30:** Finalized the project report.
 
 ## Result
-### 🎬 Scenario 01: DynamicObjectCrossing ✅
+### 🎬 Scenario 01: DynamicObjectCrossing ✅(10/10)
 | Normal | with FM & SDF |
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/8041c3c6-fedd-4b0b-ae7a-875deb7a7c66" width="100%"></video> | <video src="https://github.com/user-attachments/assets/b02197e1-b7ad-4231-ab43-2aa8501a0823" width="100%"></video> |
@@ -52,7 +52,7 @@ Enhance planning defense in SafeBench benchmarking by leveraging FlowMatching an
 #### 📈 Result Analysis
 When a pedestrian crosses the road, the SDF score drops below 0.5, triggering an immediate stop. Once the pedestrian has cleared the path, the vehicle resumes its movement.
 
-### 🎬 Scenario 02: VehicleTurningRoute ⚠️
+### 🎬 Scenario 02: VehicleTurningRoute ⚠️(6/10)
 | Normal | with FM & SDF |
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/c699a938-be8e-471a-8b3a-ccb32424ab50" width="100%"></video> | <video src="https://github.com/user-attachments/assets/740ef2db-3fee-4549-98e0-6d0697baf101" width="100%"></video> |
@@ -67,7 +67,7 @@ When a pedestrian crosses the road, the SDF score drops below 0.5, triggering an
 #### 📈 Result Analysis
 While turning is unsmooth, the FM score ensures functional deceleration. However, the discrepancy between the car's orientation and the pedestrian's direction limits the reliability of the SDF score in this specific scenario.
 
-### 🎬 Scenario 03: OtherLeadingVehicle ✅
+### 🎬 Scenario 03: OtherLeadingVehicle ✅(10/10)
 | Normal | with FM & SDF |
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/5847f8de-f87d-4296-a8b7-65208e5e1e49" width="100%"></video> | <video src="https://github.com/user-attachments/assets/786980c4-3dd7-4413-a396-94d6c8dde79c" width="100%"></video> |
@@ -81,7 +81,7 @@ While turning is unsmooth, the FM score ensures functional deceleration. However
 #### 📈 Result Analysis
 The FM score is maintained under normal conditions, but an SDF score below 0.5 signals danger and initiates braking. The vehicle resumes normal operation once the SDF score recovers (> 0.5) as the front car moves away.
 
-### 🎬 Scenario 04: ManeuverOppositeDirection ✅
+### 🎬 Scenario 04: ManeuverOppositeDirection ✅(10/10)
 | Normal | with FM & SDF |
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/e63fa5d5-4ee7-4dda-bf7b-83f31ba6562c" width="100%"></video> | <video src="https://github.com/user-attachments/assets/67d814f4-c59f-481e-b93b-882209704129" width="100%"></video> |
@@ -95,7 +95,7 @@ The FM score is maintained under normal conditions, but an SDF score below 0.5 s
 #### 📈 Result Analysis
 The FM score is maintained under normal conditions, but an SDF score below 0.5 signals danger and initiates braking.
 
-### 🎬 Scenario 05: OppositeVehicleRunningRedLight ⚠️
+### 🎬 Scenario 05: OppositeVehicleRunningRedLight ⚠️(3/10)
 | Normal | with FM & SDF | 
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/0d8b1d9f-1056-4083-b0b3-96ea74a6839c" width="100%"></video> | <video src="https://github.com/user-attachments/assets/0c13c264-62f2-483b-abdb-0ed299ff4bd1" width="100%"></video> |
@@ -113,7 +113,7 @@ The FM score is maintained under normal conditions, but an SDF score below 0.5 s
 #### 📈 Result Analysis
 Due to the state data being limited to frontal input, SDF fluctuations (below 0.5) are only triggered when a vehicle from the left merges into the front trajectory of the ego car
 
-### 🎬 Scenario 06: TurnLeftAtSignalizedJunction ❌
+### 🎬 Scenario 06: TurnLeftAtSignalizedJunction ❌(1/10)
 | Normal | with FM & SDF |
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/90d03d3b-baa5-4524-a5f6-095b89359b8c" width="100%"></video> | <video src="https://github.com/user-attachments/assets/b1abb4fa-7160-48d8-9aa1-d43bafb7c9fd" width="100%"></video> |
@@ -132,7 +132,7 @@ Due to the state data being limited to frontal input, SDF fluctuations (below 0.
 #### 📈 Result Analysis
 SDF-based braking is restricted by the frontal-only data. Fortunately, the FM score initiates a slowdown during left turns, providing a safety buffer even when the SDF score remains unresponsive
 
-### 🎬 Scenario 07: TurnLeftAtSignalizedJunction ✅✅
+### 🎬 Scenario 07: TurnLeftAtSignalizedJunction ✅✅(10/10) - Best Example
 | Normal | with FM & SDF |
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/ff1cf6dc-3511-4e24-83dc-08a8c0fca882" width="100%"></video> | <video src="https://github.com/user-attachments/assets/1141b8c9-c600-44b9-a93e-df591ab30f83" width="100%"></video> |
@@ -151,7 +151,7 @@ SDF-based braking is restricted by the frontal-only data. Fortunately, the FM sc
 #### 📈 Result Analysis
 This scenario provides a clear example for evaluating both SDF and FM scores. As shown in the logs, the ego car first detects the obstacle and initiates emergency braking. Once the path is clear, it successfully executes a right turn.
 
-### 🎬 Scenario 08: NoSignalJunctionCrossingRoute ⚠️
+### 🎬 Scenario 08: NoSignalJunctionCrossingRoute ⚠️(4/10)
 | Normal | with FM & SDF |
 | :---: | :---: |
 | <video src="https://github.com/user-attachments/assets/7f3afe95-8e58-443f-ad5a-8b78e9d57f89" width="100%"></video> | <video src="https://github.com/user-attachments/assets/2163cee5-2f2e-4849-a5cb-a297f087e460" width="100%"></video> |
@@ -163,10 +163,19 @@ This scenario provides a clear example for evaluating both SDF and FM scores. As
 
 
 #### 📈 Result Analysis
-Due to the state data being limited to frontal input, SDF fluctuations (below 0.5) are only triggered when a vehicle from the left merges into the front trajectory of the ego car
+- Due to the state data being limited to frontal input, SDF fluctuations (below 0.5) are only triggered when a vehicle from the left merges into the front trajectory of the ego car
 
 
 ### Overall result
 
-The Flow Matching (FM) algorithm proved remarkably efficient. Even when trained on only 10 episodes using a single random scenario (straight driving with a pedestrian), it successfully learned to follow the intended route. A key contribution of this work is the decoupling of SDF and FM: using SDF to prioritize collision avoidance while leveraging FM for precise route following, allowing each module to specialize in its respective safety and navigation tasks.
+The Flow Matching (FM) algorithm demonstrated **strong efficiency** and a **high degree of consistency with the physical principles of driving**. Even when trained on only ten episodes within a single random scenario involving straight driving and a pedestrian, the model successfully learned to follow the intended route. This result highlights the strong inductive bias of FM, enabling effective learning from extremely limited data. Furthermore, the proposed framework shows that meaningful driving behaviors can emerge without extensive scenario diversity. Overall, the results validate FM as a promising approach for data-efficient and physically grounded autonomous driving.
 
+### improvements
+- Simplified SDF Representation  
+The SDF formulation used in this work relies on **discrete**, **frontal-only information** rather than a continuous, multi-directional distance representation. While this simplification enables efficient training, extending the SDF to **incorporate richer spatial geometry** could significantly enhance safety awareness and generalization.
+
+- Single-Q SAC for Control  
+Although Single-Q SAC allows fast initial learning, it may suffer from **overestimation bias** that affects long-term stability. Employing Double-Q SAC in future work is expected to improve **robustness and yield more reliable control performance**.
+
+- Limited Action Diversity  
+The current setup focuses primarily on safety estimation and braking behaviors for visualization purposes. Expanding the action space to include **more diverse and natural driving maneuvers**, such as overtaking or lane changes, would improve realism and practical applicability.
