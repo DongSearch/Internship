@@ -170,12 +170,12 @@ This scenario provides a clear example for evaluating both SDF and FM scores. As
 
 The Flow Matching (FM) algorithm demonstrated **strong efficiency** and a **high degree of consistency with the physical principles of driving**. Even when trained on only ten episodes within a single random scenario involving straight driving and a pedestrian, the model successfully learned to follow the intended route. This result highlights the strong inductive bias of FM, enabling effective learning from extremely limited data. Furthermore, the proposed framework shows that meaningful driving behaviors can emerge without extensive scenario diversity. Overall, the results validate FM as a promising approach for data-efficient and physically grounded autonomous driving.
 
-### improvements
-- Simplified SDF Representation  
+### Limitations and Future Improvements
+- **Simplified SDF Representation**  
 The SDF formulation used in this work relies on **discrete**, **frontal-only information** rather than a continuous, multi-directional distance representation. While this simplification enables efficient training, extending the SDF to **incorporate richer spatial geometry** could significantly enhance safety awareness and generalization.
 
-- Single-Q SAC for Control  
+- **Single-Q SAC for Control**  
 Although Single-Q SAC allows fast initial learning, it may suffer from **overestimation bias** that affects long-term stability. Employing Double-Q SAC in future work is expected to improve **robustness and yield more reliable control performance**.
 
-- Limited Action Diversity  
+- **Limited Action Diversity**  
 The current setup focuses primarily on safety estimation and braking behaviors for visualization purposes. Expanding the action space to include **more diverse and natural driving maneuvers**, such as overtaking or lane changes, would improve realism and practical applicability.
