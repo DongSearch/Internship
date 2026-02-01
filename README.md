@@ -44,6 +44,9 @@ The current setup focuses primarily on safety estimation and braking behaviors f
   - add trained model
 
 ## 📅 Key milestone
+- **Jul 30:** Ice breaking and Brief topic discussion
+- **Aug 10:** Related research topics and basic algorithms(Flow matching)
+- **Sep 15:** Topic refinement during meeting
 - **Sep 30:** Established CARLA and SafeBench environments on a remote server.
 - **Oct 10:** Set up a simulation pipeline to evaluate scenarios via recorded videos (offline rendering).
 - **Oct 15:** Optimized driving performance by transitioning from Single-Q to **Double-Q SAC**. 
@@ -55,7 +58,10 @@ The current setup focuses primarily on safety estimation and braking behaviors f
 - **Nov 29:** **[Optimization]** Trained Flow Matching independently. Identified that training with pro-active actions simultaneously blurred the distinction between normal and abnormal driving.
 - **Dec 10:** Fine-tuned hyperparameters and score thresholds based on evaluation metrics.
 - **Dec 20:** Conducted comprehensive result analysis and visualization.
-- **Dec 30:** Finalized the project report.
+- **Dec 30:** analysis current promblems and improvements
+- **Jan 15:** start reports and coding optimization
+- **Jan 30:** finish reports 
+- **Feb 15:** Final presentation   
 
 ## 📊 Result
 ### 🎬 Scenario 01: DynamicObjectCrossing ✅(10/10)
