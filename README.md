@@ -9,7 +9,7 @@ Enhance planning defense in SafeBench benchmarking by leveraging FlowMatching an
 - **Proaction**: Incorporates soft/hard braking based on scores.
 - **Workflow**: After RL learns normal driving, Flow Matching and SDF networks are trained. Flow Matching emphasizes trajectory control, while SDF handles sudden collision threats, improving planning defense.
 
-# Consequences  
+## 🔬 Consequences  
 ### Overall result
 
 The Flow Matching (FM) algorithm demonstrated **strong efficiency** and a **high degree of consistency with the physical principles of driving**. Even when trained on only ten episodes within a single random scenario involving straight driving and a pedestrian, the model successfully learned to follow the intended route. This result highlights the strong inductive bias of FM, enabling effective learning from extremely limited data. Furthermore, the proposed framework shows that meaningful driving behaviors can emerge without extensive scenario diversity. Overall, the results validate FM as a promising approach for data-efficient and physically grounded autonomous driving.
