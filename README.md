@@ -1,7 +1,7 @@
-## 🎯 Goal: 
+## 🎯 Goal  
 Enhance planning defense in SafeBench benchmarking by leveraging FlowMatching and Signed Distance Functions (SDF). The system takes vehicle state information as input, predicts the next planning step, and detects out-of-distribution (OOD) scenarios.
 
-## 🛠 Algorithms Used:
+## 🛠 Algorithms Used  
 - **RL (Soft Actor-Critic)**: Learns normal driving behavior.
 - **Flow Matching**: Focuses on vehicle trajectory, steering, speed, and lane-out information. During unexpected turns (left/right), it recognizes OOD scenarios and reduces vehicle speed to handle them safely.
 - **SDF (Signed Distance Function)**: Learns collision-related responses, detecting front objects and sudden appearances regardless of normal driving patterns (side objects ignored). range is between 0 to 1. 0 is dangerous, 1 is safe.(use from basic concept of SDF)
